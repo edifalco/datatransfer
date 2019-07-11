@@ -39,8 +39,9 @@ class ProviderController extends Controller
     {
         $request->validate([
             'name' => 'required|max:32',
+            'number' => 'required|max:10'
         ]);
-        
+
         $input = $request->all();
         Provider::create($input);
         Session::flash('provider_created', 'The provider has been created.');
@@ -80,9 +81,9 @@ class ProviderController extends Controller
     public function update(Request $request, $id)
     {
         $provider =  Provider::findOrFail($id);
-        
+
         $input = $request->all();
-        
+
         $provider->update($input);
         Session::flash('provider_updated', 'The provider has been updated.');
         return redirect('/admin/providers');

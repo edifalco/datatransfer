@@ -29,9 +29,13 @@
                     {!! Form::text('name', null, ['class'=>'form-control']) !!}
                 </div>
                 <div class="form-group">
+                    {!! Form::label('number', 'Data Provider Number:') !!}
+                    {!! Form::text('number', null, ['class'=>'form-control']) !!}
+                </div>
+                <div class="form-group">
                     {!! Form::submit('Create Provider', ['class'=>'btn btn-primary']) !!}
                 </div>
             {!! Form::close() !!}
         </div>
-    
+
 @endsection

@@ -13,9 +13,9 @@
 @stop
 
 @section('content')
-    
+
     <div class="row">
-        
+
         <div class="col-sm-12">
             <!-- general form elements -->
               <div class="box box-primary">
@@ -32,10 +32,14 @@
                         {!! Form::text('name', null, ['class'=>'form-control']) !!}
                     </div>
                     <div class="form-group">
+                        {!! Form::label('number', 'Data Provider Number:') !!}
+                        {!! Form::text('number', null, ['class'=>'form-control']) !!}
+                    </div>
+                    <div class="form-group">
                         {!! Form::submit('Update Provider', ['class'=>'btn btn-primary pull-left']) !!}
                     </div>
                 {!! Form::close() !!}
-                
+
                 {!! Form::model($provider, ['method'=>'DELETE', 'action'=>['ProviderController@destroy', $provider->id]]) !!}
                     {{ csrf_field() }}
                     <div class="form-group">
@@ -45,9 +49,9 @@
             </div>
         </div>
     </div>
-    
+
     <div class="row">
         @include('includes.form_errors')
     </div>
-    
+
 @endsection

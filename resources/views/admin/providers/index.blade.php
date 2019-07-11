@@ -26,7 +26,7 @@
     <div class="box box-primary">
         <div class="box-header">
           <h3 class="box-title">All Providers</h3>
-          
+
           <!--
           <div class="box-tools">
             <div class="input-group input-group-sm" style="width: 150px;">
@@ -38,7 +38,7 @@
             </div>
           </div>
           -->
-          
+
         </div>
         <!-- /.box-header -->
         @if(count($providers) > 0)
@@ -47,17 +47,19 @@
             <tbody><tr>
                     <th>ID</th>
                     <th>Name</th>
+                    <th>Data Provider Number</th>
                     <th>Created</th>
                     <th>Last Updated</th>
                     <th>Edit</th>
                   </tr>
                 </thead>
                 <tbody>
-                    @if($providers)    
+                    @if($providers)
                         @foreach($providers as $provider)
                             <tr>
                                 <td>{{ $provider->id }}</td>
                                 <td>{{ $provider->name }}</td>
+                                <td>{{ $provider->number }}</td>
                                 <td>{{ $provider->created_at->diffForHumans() }}</td>
                                 <td>{{ $provider->updated_at->diffForHumans() }}</td>
                                 <td><a class="btn btn-info" href="{{ route('admin.providers.edit', $provider->id) }}/">Edit</a></td>
@@ -66,9 +68,9 @@
                     @endif
                 </tbody>
               </table>
-              
+
               <div class="box-footer clearfix">
-                
+
                 <!--
                 <ul class="pagination pagination-sm no-margin pull-right">
                   <li><a href="#">«</a></li>
@@ -78,10 +80,10 @@
                   <li><a href="#">»</a></li>
                 </ul>
                 -->
-      
+
               </div>
-              
+
             @endif
         </div>
-        
+
 @endsection
