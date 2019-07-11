@@ -20,7 +20,7 @@
     <div class="box box-primary">
         <div class="box-header">
           <h3 class="box-title">All Files</h3>
-          
+
           <!--
           <div class="box-tools">
             <div class="input-group input-group-sm" style="width: 150px;">
@@ -32,7 +32,7 @@
             </div>
           </div>
           -->
-          
+
         </div>
         <!-- /.box-header -->
         @if(count($files) > 0)
@@ -46,13 +46,14 @@
                     <th>Hashed Name</th>
                     <th>User</th>
                     <th>Provider</th>
+                    <th>Provider Number</th>
                     <th>Message</th>
                     <th>Created</th>
                     <th>Last Updated</th>
                   </tr>
                 </thead>
                 <tbody>
-                    @if($files)    
+                    @if($files)
                         @foreach($files as $file)
                             <tr>
                                 <td>{{ $file->id }}</td>
@@ -62,6 +63,7 @@
                                 <td>{{ $file->hashed_name }}</td>
                                 <td>{{ ($file->user) ? $file->user->name : "There is no User associated with this item" }}</td>
                                 <td>{{ ($file->provider) ? $file->provider->name : "There is no Provider associated with this item" }}</td>
+                                <td>{{ ($file->provider) ? $file->provider->number : "There is no Provider associated with this item" }}</td>
                                 <td>{{ $file->file_message }}</td>
                                 <td>{{ $file->created_at->diffForHumans() }}</td>
                                 <td>{{ $file->updated_at->diffForHumans() }}</td>
@@ -70,9 +72,9 @@
                     @endif
                 </tbody>
               </table>
-              
+
               <div class="box-footer clearfix">
-                
+
                 <!--
                 <ul class="pagination pagination-sm no-margin pull-right">
                   <li><a href="#">«</a></li>
@@ -82,7 +84,7 @@
                   <li><a href="#">»</a></li>
                 </ul>
                 -->
-      
+
               </div>
         	</div>
         @else
@@ -90,5 +92,5 @@
         		There are no Files.
         	</div>
         @endif
-        
+
 @endsection
