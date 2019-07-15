@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\File;
 use App\Http\Requests\UploadFile;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Mail;
+use App\FileMessage;
 
 class HomeController extends Controller
 {
@@ -116,6 +118,18 @@ class HomeController extends Controller
             fputcsv($change,$line,",");
         }
         fclose($change);
+
+        $data = [
+            'dp_number'=>$dp_number,
+            'illness'=>$request->illness,
+            'file_message'=>$request->file_message
+        ];
+
+        Mail::send('emails.new_file', $data, function($message){
+            $message->from('it@synapse-managers.com', 'Harmony Data Transfer Area');
+            $message->to('it@synapse-managers.com','Harmony Data Transfer Area');
+            $message->subject('New .csv file received on the Harmony Data Transfer Area');
+        });
 
         // Storage::delete($path); //Deletes original files.
 
