@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Harmony Data Anonymisation</title>
+    <title>Harmony Data Transfer Area (HDTA)</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -30,7 +30,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-md fixed-topnavbar-light bg-white fixed-top navbar-shrink border-bottom shadow-sm" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="/"><img class="img-fluid" src="/img/logo-harmony-2.png" alt="Harmony Data Anonymisation"></a>
+        <a class="navbar-brand js-scroll-trigger" href="/"><img class="img-fluid" src="/img/logo-harmony-2.png" alt="Harmony Data Transfer Area (HDTA)"></a>
         <button class="navbar-toggler navbar-toggler-right mt-2" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fas fa-bars"></i>

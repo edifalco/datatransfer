@@ -5,7 +5,7 @@
     <header class="masthead">
       <div class="container">
         <div class="intro-text">
-          <div class="intro-heading text-left">Harmony Data Anonymisation</div>
+          <div class="intro-heading text-left">Harmony Data Transfer Area (HDTA)</div>
         </div>
       </div>
     </header>

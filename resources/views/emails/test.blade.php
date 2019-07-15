@@ -2,7 +2,7 @@
 <html lang='en'>
     <head>
         <meta charset="UTF-8"
-        <title>Invitation to join the Harmony Data Anonymisation Platform</title>
+        <title>Invitation to join the Harmony Data Transfer Area (HDTA)</title>
     </head>
     <body>
         <p>Email address: {{$email}}</p>

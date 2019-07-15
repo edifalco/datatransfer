@@ -1,6 +1,6 @@
 <p>Hi {{$name}},</p>
 
-<p>{{$user_name}} has invited you to join the Harmony Data Anonymisation Platform.</p>
+<p>{{$user_name}} has invited you to join the Harmony Data Transfer Area (HDTA).</p>
 
 <p>Please click <a href="{{ route('accept', $token) }}">here</a> to create your account.</p>
 

@@ -1,6 +1,6 @@
 <p>Hello,</p>
 
-<p>A new file has been uploaded to the Harmony Data Trandsfer Area (HDTA)</p>
+<p>A new file has been uploaded to the Harmony Data Transfer Area (HDTA)</p>
 
 <p>Data Provider: {{ $dp_number }}<br>
 Illness: {{ $illness }}<br>

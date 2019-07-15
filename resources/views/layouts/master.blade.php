@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>@yield('title') - Harmony Data Anonymisation</title>
+  <title>@yield('title') - Harmony Data Transfer Area (HDTA)</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -29,7 +29,7 @@
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-  
+
   @yield('styles')
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -56,14 +56,14 @@
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-          
+
           <!-- Messages: style can be found in dropdown.less-->
           <li class="home-menu">
             <a href="/">
               <i class="fa fa-home"></i>
             </a>
           </li>
-          
+
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -92,13 +92,13 @@
             </ul>
           </li>
           <!-- Control Sidebar Toggle Button -->
-          
+
           <!--
-          
+
           <li>
             <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
           </li>
-          
+
           -->
         </ul>
       </div>
@@ -124,31 +124,31 @@
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
-        
+
         <li><a href="{{ route('admin.index') }}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-        
+
         <li><a href="{{ route('admin.files.index') }}"><i class="fa fa-upload"></i> <span>List Uploads</span></a></li>
-        
+
         <li><a href="{{ route('admin.invites.index') }}"><i class="fa fa-user-plus"></i> <span>List Invites</span></a></li>
-        
+
         <li><a href="{{ route('admin.invites.create') }}"><i class="fa fa-user-plus"></i> <span>Create Invite</span></a></li>
-        
+
         <li><a href="{{ route('admin.users.index') }}"><i class="fa fa-users"></i> <span>List Users</span></a></li>
-        
+
         <li><a href="{{ route('admin.users.create') }}"><i class="fa fa-user-plus"></i> <span>Create User</span></a></li>
-        
+
         <li><a href="{{ route('admin.providers.index') }}"><i class="fa fa-handshake-o"></i> <span>List Providers</span></a></li>
-        
+
         <li><a href="{{ route('admin.providers.create') }}"><i class="fa fa-handshake-o"></i> <span>Create Provider</span></a></li>
-        
+
         <li><a href="{{ route('admin.roles.index') }}"><i class="fa fa-user-times"></i> <span>List Roles</span></a></li>
-        
+
         <li><a href="{{ route('admin.roles.create') }}"><i class="fa fa-user-times"></i> <span>Create Role</span></a></li>
-        
+
         <li><a href="{{ route('admin.messages.index') }}"><i class="fa fa-envelope"></i> <span>List Messages</span></a></li>
-        
+
         <!--
-        
+
         <li class="treeview">
           <a href="/admin">
             <i class="fa fa-file-image-o"></i> <span>Media</span>
@@ -161,7 +161,7 @@
             <li><a href="{{ route('admin.medias.create') }}"><i class="fa fa-circle-o"></i> Upload</a></li>
           </ul>
         </li>
-        
+
         <li class="treeview">
           <a href="/admin">
             <i class="fa fa-user"></i> <span>Users</span>
@@ -174,9 +174,9 @@
             <li><a href="{{ route('admin.users.create') }}"><i class="fa fa-circle-o"></i> Create Users</a></li>
           </ul>
         </li>
-        
+
         -->
-        
+
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -186,17 +186,17 @@
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    
+
     <section class="content-header">
       @yield('content_header')
     </section>
-    
+
     <!-- Main content -->
 
     <section class="content">
       @yield('content')
     </section>
-    
+
   </div>
   <!-- /.content-wrapper -->
 
@@ -204,7 +204,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.0
     </div>
-    <strong>Copyright &copy; <?php echo date("Y"); ?> <a href="{{ route('admin.index') }}">Harmony Data Anonymisation Platform</a>.</strong> All rights
+    <strong>Copyright &copy; <?php echo date("Y"); ?> <a href="{{ route('admin.index') }}">Harmony Data Transfer Area (HDTA)</a>.</strong> All rights
     reserved.
   </footer>
 
