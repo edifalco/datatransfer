@@ -29,9 +29,9 @@ class HomeController extends Controller
     {
         $files = File::all();
         return view('admin.files.index', compact('files'));
-        
+
     }
-    
+
     /**
      * Show the form for creating a new resource.
      *
@@ -49,32 +49,34 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(UploadFile $request)
-    {   
+    {
         $input = $request->all();
         if($file = $request->file('file')){
-            $time = time();
-            $input['file'] = $name = $time."_".$file->getClientOriginalName();
-            $input['original_name'] = $file->getClientOriginalName();
-            $input['change_name'] = $change_name = $time."_CODE_CHANGE".".csv";
-            $input['hashed_name'] = $hashed_name = $time."_HASHED".".csv";
-            //$file->move('base_path', $name);
-            $path = $request->file('file')->storeAs('data_provision', $name);
+          $time = time();
+          $user = Auth::user();
+          $dp_number = "DP".$user->provider->number;
+          $input['file'] = $name = $dp_number."_".$time."_".$file->getClientOriginalName();
+          $input['original_name'] = $file->getClientOriginalName();
+          $input['change_name'] = $change_name = $dp_number."_".$time."_CODE_CHANGE".".csv";
+          $input['hashed_name'] = $hashed_name = $dp_number."_".$time."_HASHED".".csv";
+          //$file->move('base_path', $name);
+          $path = $request->file('file')->storeAs('data_provision', $name);
         }
-        
+
         $user = Auth::user();
         $input['user_id'] = $user->id;
         $input['provider_id'] = $user->provider_id;
         File::create($input);
-        
+
         $original = fopen('../storage/app/'.$path,"r");
-        
+
         $i=0;
         while(!feof($original)) {
           $original_data[$i] = fgetcsv($original,0,",");
           $i++;
         }
         fclose($original);
-        
+
         $l=0;
         foreach($original_data as $row_original) {
           if(!empty($row_original)) {
@@ -82,11 +84,11 @@ class HomeController extends Controller
             $l++;
           }
         }
-        
+
         $hashed_data = $clean_data;
         $code_change[0][0] = "Original key";
         $code_change[0][1] = "Hashed key";
-        
+
         $j=0;
         foreach($clean_data as $row) {
           $k=0;
@@ -99,24 +101,24 @@ class HomeController extends Controller
           }
           $j++;
         }
-        
+
         $hashed = fopen("../storage/app/transfer_to_db/".$hashed_name,"w");
         foreach ($hashed_data as $line)
           {
           fputcsv($hashed,$line,",");
           }
         fclose($hashed);
-        
-        
+
+
         $change = fopen("../storage/app/code_change/".$change_name,"w");
         foreach ($code_change as $line)
         {
             fputcsv($change,$line,",");
         }
         fclose($change);
-        
+
         // Storage::delete($path); //Deletes original files.
-        
+
         return redirect('/')->with('success','Your file has been successfuly uploaded.');
     }
 
@@ -164,12 +166,12 @@ class HomeController extends Controller
     {
         //
     }
-    
+
     public function graph()
     {
     $viewData = $this->loadViewData();
 
     return view('graph', $viewData);
     }
-    
+
 }
