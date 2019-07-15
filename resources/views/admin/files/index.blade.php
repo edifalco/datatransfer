@@ -47,6 +47,7 @@
                     <th>User</th>
                     <th>Provider</th>
                     <th>Provider Number</th>
+                    <th>Illness</th>
                     <th>Message</th>
                     <th>Created</th>
                     <th>Last Updated</th>
@@ -64,6 +65,7 @@
                                 <td>{{ ($file->user) ? $file->user->name : "There is no User associated with this item" }}</td>
                                 <td>{{ ($file->provider) ? $file->provider->name : "There is no Provider associated with this item" }}</td>
                                 <td>{{ ($file->provider) ? $file->provider->number : "There is no Provider associated with this item" }}</td>
+                                <td>{{ $file->illness }}</td>
                                 <td>{{ $file->file_message }}</td>
                                 <td>{{ $file->created_at->diffForHumans() }}</td>
                                 <td>{{ $file->updated_at->diffForHumans() }}</td>

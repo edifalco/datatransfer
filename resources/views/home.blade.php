@@ -9,10 +9,10 @@
         </div>
       </div>
     </header>
-    
+
     <section id="services">
       <div class="container">
-      
+
         <div class="row">
           <div class="col-lg-12">
             @includeWhen(Session::has('success'),'layouts.sucess')
@@ -20,8 +20,8 @@
 		  </div>
 		</div>
 		@auth
-    		@if(((Auth::user()->role->name == "Admin") || (Auth::user()->role->name == "Provider")) && (Auth::user()->is_active))                
-                
+    		@if(((Auth::user()->role->name == "Admin") || (Auth::user()->role->name == "Provider")) && (Auth::user()->is_active))
+
                  <div class="row">
                   <div class="col-lg-12">
                       <h2 class="pb-3">Upload a .csv file.</h2>
@@ -31,12 +31,18 @@
                             <input type="file" class="form-control-file" name="file" id="file" required>
                             <p class="help-block text-danger"></p>
                           </div>
-                          
+
                           <div class="form-group">
-                            <textarea class="form-control" name="file_message" id="file_message" placeholder="Include a Message (optional)"></textarea>
+                              {!! Form::label('illness', 'Illness: (required)') !!}
+                              {!! Form::text('illness', null, ['class'=>'form-control', 'placeholder' => 'Provide Illness related to the file you are uploading now. i.e.: AML, MM, ALL, etc.', 'required' => '']) !!}
+                          </div>
+
+                          <div class="form-group">
+                            {!! Form::label('file_message', 'Message: (optional)') !!}
+                            <textarea class="form-control" name="file_message" id="file_message" placeholder="Include an optional message."></textarea>
                             <p class="help-block text-danger"></p>
                           </div>
-                            
+
                           <div class="form-group">
                             <div class="form-check">
                               <input class="form-check-input" type="checkbox" name="terms" value="terms" id="invalidCheck" required>
@@ -48,7 +54,7 @@
                               </div>
                             </div>
                           </div>
-                            
+
                           <div class="clearfix"></div>
                           <div class="text-left">
                             <div id="success"></div>
@@ -74,13 +80,13 @@
                     </ol>
                   </div>
                 </div>
-                
+
               @elseif(((Auth::user()->role->name == "Admin") || (Auth::user()->role->name == "Provider")) && (!Auth::user()->is_active))
                 <h2>Account is not active.</h2>
                 <p>Please contact your project manager and request to activate your account, or contact us using the below contact form.</p>
               @endif
           @endauth
-          
+
           @guest
           	<div class="row my-5 py-5">
           		<div class="col-lg-12">
@@ -91,7 +97,7 @@
           @endguest
       </div>
     </section>
-    
+
     <section id="contact">
       <div class="container">
         <div class="row">

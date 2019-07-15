@@ -21,6 +21,7 @@ class CreateFilesTable extends Migration
             $table->string('hashed_name');
             $table->integer('user_id');
             $table->integer('provider_id');
+            $table->string('illness')->nullable();
             $table->text('file_message')->nullable();
             $table->timestamps();
         });
